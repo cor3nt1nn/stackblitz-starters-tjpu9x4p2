@@ -1,0 +1,48 @@
+<!-- Consignes -->
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title> Consignes </mat-panel-title>
+  </mat-expansion-panel-header>
+  <ol>
+    <li>Afficher le total du panier</li>
+    <li>
+      Ajouter la suppression d'un produit du panier. Le bouton existe mais il ne
+      fait rien. La suppression du produit doit mettre à jour le panier et le
+      nombre à côté de l'icône du panier dans la barre d'en-tête
+    </li>
+    <li>Désactiver le bouton "Commander" si le panier est vide</li>
+  </ol>
+</mat-expansion-panel>
+<!-- Fin des consignes -->
+
+<!-- Insert your code here -->
+
+<mat-divider></mat-divider>
+
+<h2>Panier</h2>
+
+@for( productCart of cart; track $index) {
+<mat-card>
+  <mat-card-content>
+    - {{ productCart.title }} X{{ productCart.quantity }}
+    {{ productCart.price * productCart.quantity | currency }}
+    <button mat-mini-fab color="primary">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
+}
+<div class="m-1">
+  <h3>Total :</h3>
+</div>
+
+<div class="m-1">
+  <button (click)="nextStep()" mat-raised-button color="primary">
+    Commander
+  </button>
+</div>
+
+<mat-divider></mat-divider>
+<div class="m-1">
+  <a routerLink="/products">Retour à la liste de produits</a>
+</div>

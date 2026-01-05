@@ -1,0 +1,18 @@
+@if (product) {
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title-group>
+      <img mat-card-sm-image [src]="product.srcImg" />
+      <mat-card-title
+        ><a>{{ product.title }}</a>
+      </mat-card-title>
+      <span>{{ product.price | currency }}</span>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <button (click)="addProductToCart()" mat-raised-button color="primary">
+      Ajouter au Panier
+    </button>
+  </mat-card-content>
+</mat-card>
+}

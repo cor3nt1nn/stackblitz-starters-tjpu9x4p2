@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <button mat-button [routerLink]="['/']">My App</button>
+  <button mat-mini-fab color="primary" routerLink="products">
+    <mat-icon> store icon </mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-mini-fab color="secondary" routerLink="admin-orders">
+    <mat-icon>check circle icon</mat-icon>
+    {{ nbOrderSuccessfull() }}
+  </button>
+  <button mat-mini-fab color="primary" routerLink="cart">
+    <mat-icon>shopping_cart</mat-icon>
+    {{ nbItemsCart() }}
+  </button>
+</mat-toolbar>
+<router-outlet></router-outlet>

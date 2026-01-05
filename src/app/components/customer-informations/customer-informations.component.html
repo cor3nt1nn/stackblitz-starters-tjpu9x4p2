@@ -1,0 +1,42 @@
+<!-- Consignes -->
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title> Consignes </mat-panel-title>
+  </mat-expansion-panel-header>
+  <ol>
+    <li>
+      Créer un formulaire <b>réactif</b> (ReactiveFormsModule) pour enregister
+      les informations client (voir l'interface order dans le dossier model)
+    </li>
+    <li>
+      Ajouter les bons validateurs pour vérifier la qualité des données :
+      <ul>
+        <li>firstName : obligatoire longueur max 30</li>
+        <li>lastName : obligatoire longueur max 30</li>
+        <li>email : obligatoire format email</li>
+        <li>adress : obligatoire longueur max 50</li>
+      </ul>
+    </li>
+    <li>
+      Ce formulaire devra répondre aux exigences suivantes : <br />a. Affichage
+      des erreurs après que l’utilisateur ait touché ou modifié le champ
+      <br />b. Le bouton de soumission doit être cliquable que si le formulaire
+      est valide <br />c. Lors de la soumission du formulaire : réinitialiser le
+      formulaire
+    </li>
+    <li>
+      Utilisation de l'order Service pour ajouter un order
+      <br />
+      Vider le panier
+      <br />
+      Re-diriger vers la page de succès
+    </li>
+  </ol>
+</mat-expansion-panel>
+<!-- Fin des consignes -->
+
+<mat-divider></mat-divider>
+<!-- Insert your code here  -->
+<div>
+  <a routerLink="/order-summary">Page commande validée</a>
+</div>

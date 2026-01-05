@@ -1,0 +1,62 @@
+<!-- Consignes -->
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title> Consignes </mat-panel-title>
+  </mat-expansion-panel-header>
+  <ol>
+    <li>
+      Afficher le produit correspondant à l'ID passé en paramètre de la route et
+      afficher ce produit grâce au template suivant. Le productService possède
+      la méthode <b>getProductById</b> pour récupérer un produit via son id
+    </li>
+    <li>
+      Ajouter l'action d'ajout au panier (pour l'instant le bouton ne fait
+      rien). Le bouton doit ajouter la quantité sélectionnée dans le champ
+      quantité
+    </li>
+  </ol>
+</mat-expansion-panel>
+<!-- Fin des consignes -->
+
+<!-- Insert your code here -->
+@if(productCart) {
+<div class="container">
+  <div>
+    <img [src]="productCart.srcImg" />
+  </div>
+  <div>
+    <div class="container">
+      <h1 class="margin">{{ productCart.title }}</h1>
+      <h2 class="margin">{{ productCart.price | currency }}</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <p>{{ productCart.description }}</p>
+  </div>
+</div>
+<div class="m-1">
+  <mat-form-field>
+    <mat-label>Quantité</mat-label>
+    <select matNativeControl [(ngModel)]="productCart.quantity">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </mat-form-field>
+  <button
+    class="m-1"
+    mat-raised-button
+    color="primary"
+    [disabled]="!productCart.quantity"
+  >
+    Ajouter au Panier
+  </button>
+</div>
+} @else {
+<p>Produit non trouvé</p>
+}
+
+<mat-divider></mat-divider>
+<div>
+  <a [routerLink]="['/products']">Retour à la liste de produits</a>
+</div>
